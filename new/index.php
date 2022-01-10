@@ -25,8 +25,16 @@ function createNewBoard($board_id)
         die("Connection failed: " . $conn->connect_error);
     }
 
+    $select_query = "SELECT trimmed_json FROM boards WHERE board='$board_id'";
+
+    $result = $conn->query($select_query);
+
+    if ($result->num_rows > 0) {
+        $board_id = generateBoardID();
+        createNewBoard($board_id);
+    } else {
         $insert_query = "INSERT INTO `boards`(`board`, `trimmed_json`) VALUES ('$board_id','')";
         $result = $conn->query($insert_query);
-        echo "Board Created.".$insert_query;
-    
+        echo "Board Created.";
+    }
 }
