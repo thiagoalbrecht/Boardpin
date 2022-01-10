@@ -21,7 +21,7 @@ function postUpdate(task, jsoncontent) {
 
 var todoListApp = new Vue({
 
-	el: '#app-todolist',
+	el: '#app-boardpin',
 
 	data: {
 		todoItems: [],
@@ -71,7 +71,15 @@ var todoListApp = new Vue({
 					GetFreeItemIndex(this.todoItems);
 					this.refreshItems();
 				})
+		},
+		copytoClipboard: function (url) {
+			navigator.clipboard.writeText(url)
+				.catch(
+					function () {
+						alert("Couldn't copy to clipboard. Please manually select and copy the link."); // Error
+					});
 		}
+
 	},
 
 	mounted() {
