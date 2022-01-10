@@ -35,7 +35,7 @@ function createNewBoard($board_id)
     } else {
         $insert_query = "INSERT INTO `boards`(`board`, `trimmed_json`) VALUES ('$board_id','')";
         $result = $conn->query($insert_query);
-        header('Location: '.URL.'/b/'.$board_id);
+        header('Location: ' . URL . '/b/' . $board_id);
         exit;
     }
 }
