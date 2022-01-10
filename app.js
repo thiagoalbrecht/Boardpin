@@ -47,6 +47,7 @@ var boardpinApp = new Vue({
 					break;
 				case "/destroy":
 					this.noteItems = [];
+					postUpdate("add", jsoncontent);
 					break;
 				default:
 					this.noteItems.unshift(newItem);
