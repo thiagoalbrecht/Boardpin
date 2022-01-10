@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Boardpin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.1/dist/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark navigation-clean-button">
+        <div class="container"><a class="navbar-brand" href="#" style="color: rgb(255,255,255);"><i class="fas fa-map-pin me-1"></i>Boardpin</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto"></ul><a class="btn btn-primary" role="button" href="new"><i class="fas fa-plus me-2"></i>Create new board</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container text-center mt-5" style="max-width: 740px;">
+        <h1>Collaborative notes and to-do list</h1>
+        <h5>Made with Vue.js and PHP</h5><a class="btn btn-info btn-lg mt-3 me-1" role="button" href="new"><i class="fas fa-plus me-2"></i>Create new board</a><a class="btn btn-secondary btn-lg mt-3 ms-1" role="button" href="about.html"><i class="fas fa-code me-2"></i>About</a><img class="mt-4" src="assets/img/screenshot.png" style="max-width: 100%;box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);border-radius: 8px;">
+        <hr><a class="btn btn-dark btn-sm mb-3" role="button" href="https://github.com/thiagoalbrecht/Boardpin" target="_blank"><i class="fab fa-github me-2"></i>View on GitHub</a>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="qrcode">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Board link</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data=Example" style="width: 100%;max-width: 250px;">
+                    <h4 class="mt-2">boardpin.xyz/example</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
