@@ -40,17 +40,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
       break;
     case "remove":
-      //$content = str_replace(stripslashes($_POST['json']),"",$board_content); // Remove target string from JSON
-      //$content = str_replace(",,",",",$content); // Remove delimiter from previous record
-      //echo stripslashes($_POST['json']) . "<br>" . "in:" . "<br>" . $board_content . "<br> Is: <br>" . $content;
       $board_content_array = json_decode("[" . $board_content . "]");
       $requested_array = json_decode("[" . $_POST['json'] . "]");
       $id_to_delete = $requested_array[0]->Id;
       $key_of_found_id = array_search($id_to_delete, array_column($board_content_array, 'Id'));
       array_splice($board_content_array, $key_of_found_id, 1);
       $content = trim(json_encode($board_content_array), "[]");
-
       break;
+    case "update":
+      $board_content_array = json_decode("[" . $board_content . "]");
+      $requested_array = json_decode("[" . $_POST['json'] . "]");
+      $id_to_update = $requested_array[0]->Id;
+      $key_of_found_id = array_search($id_to_update, array_column($board_content_array, 'Id'));
+      $board_content_array[$key_of_found_id] = $requested_array;
+      $content = trim(json_encode($board_content_array), "[]");
   }
 
 

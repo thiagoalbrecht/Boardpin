@@ -58,15 +58,10 @@ var boardpinApp = new Vue({
 
 		},
 
-		removeNote: function (note) {
+		updateNote: function (note, task) {
 			let jsoncontent = JSON.stringify(this.noteItems[this.noteItems.indexOf(note)]);
-			this.noteItems.splice(this.noteItems.indexOf(note), 1);
-			postUpdate("remove", jsoncontent);
-		},
-
-		logCheckbox: function (note){
-			let jsoncontent = JSON.stringify(this.noteItems[this.noteItems.indexOf(note)]);
-			console.log(jsoncontent);
+			if (task === "remove") this.noteItems.splice(this.noteItems.indexOf(note), 1);
+			postUpdate(task, jsoncontent);
 		},
 
 		refreshItems: function (instant) {
