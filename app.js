@@ -19,46 +19,45 @@ function postUpdate(task, jsoncontent) {
 		});
 }
 
-var todoListApp = new Vue({
+var boardpinApp = new Vue({
 
 	el: '#app-boardpin',
 
 	data: {
-		todoItems: [],
-		newTodoText: ""
+		noteItems: [],
+		newNoteText: ""
 	},
 
 	methods: {
 
-		addTodo: function () {
+		addNote: function () {
 			allowUpdate = false;
-			if (this.newTodoText.trim() === "")
+			if (this.newNoteText.trim() === "")
 				return;
 
-			let newItem = { Id: GetFreeItemIndex(this.todoItems), Text: this.newTodoText, IsDone: false };
+			let newItem = { Id: GetFreeItemIndex(this.noteItems), Text: this.newNoteText, IsDone: false };
 			let jsoncontent = JSON.stringify(newItem);
-			switch (this.newTodoText) {
+			switch (this.newNoteText) {
 				case "/help":
 					alert("!Something = Create a to-do item 'Something'\n/clear = Delete all notes from board");
 					break;
 				case "/clear":
-					this.todoItems = [];
+					this.noteItems = [];
 					postUpdate("add", jsoncontent);
 					break;
 
 				default:
-					this.todoItems.unshift(newItem);
+					this.noteItems.unshift(newItem);
 					postUpdate("add", jsoncontent);
 					break;
 			}
-			this.newTodoText = "";
+			this.newNoteText = "";
 
 		},
 
-		removeTodo: function (todo) {
-			console.log("Changed");
-			let jsoncontent = JSON.stringify(this.todoItems[this.todoItems.indexOf(todo)]);
-			this.todoItems.splice(this.todoItems.indexOf(todo), 1);
+		removeNote: function (note) {
+			let jsoncontent = JSON.stringify(this.noteItems[this.noteItems.indexOf(note)]);
+			this.noteItems.splice(this.noteItems.indexOf(note), 1);
 			postUpdate("remove", jsoncontent);
 		},
 
@@ -67,8 +66,8 @@ var todoListApp = new Vue({
 			if (instant) target = "json.php?instant=1&"; // URL for requesting the list content without waiting for change (force update w/o long polling)
 			axios.get(rootURL + target + 'boardid=' + boardlink)
 				.then(response => {
-					this.todoItems = [...response.data]
-					GetFreeItemIndex(this.todoItems);
+					this.noteItems = [...response.data]
+					GetFreeItemIndex(this.noteItems);
 					this.refreshItems();
 				})
 		},

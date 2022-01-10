@@ -30,12 +30,12 @@ $boardlink = "boardpin.xyz/b/".$output_array[1];
         </nav>
         <div class="container mt-5" style="max-width: 600px;">
             <div class="input-group input-group-lg" id="commands">
-            <input class="form-control" type="text" placeholder="Type something (or /help)" style="background: var(--bs-dark);color: var(--bs-white);" v-model="newTodoText" v-on:keyup.enter="addTodo()"><button class="btn btn-primary" type="button" v-on:click="addTodo()" onclick="return false;"><i class="fas fa-plus"></i></button>
+            <input class="form-control" type="text" placeholder="Type something (or /help)" style="background: var(--bs-dark);color: var(--bs-white);" v-model="newNoteText" v-on:keyup.enter="addNote()"><button class="btn btn-primary" type="button" v-on:click="addNote()" onclick="return false;"><i class="fas fa-plus"></i></button>
         </div>
             <div id="main-content" class="mt-4">
                 <transition-group tag="ul" name="list-animation" class="list-group">
-                        <li v-for="todo in todoItems" v-bind:key="todo.Id" class="list-group-item d-flex justify-content-between align-items-center list-item-animation">
-                            <div><input class="form-check-input me-2" type="checkbox" v-model="todo.IsDone"><label v-bind:class="{ completed: todo.IsDone }" class="form-check-label">{{ todo.Text }}</label></div><button class="btn btn-link btn-sm" v-on:click="removeTodo(todo)" type="button" style="color: var(--bs-gray);"><i class="fas fa-times"></i></button>
+                        <li v-for="note in noteItems" v-bind:key="note.Id" class="list-group-item d-flex justify-content-between align-items-center list-item-animation">
+                            <div><input class="form-check-input me-2" type="checkbox" v-model="note.IsDone"><label v-bind:class="{ completed: note.IsDone }" class="form-check-label">{{ note.Text }}</label></div><button class="btn btn-link btn-sm" v-on:click="removeNote(note)" type="button" style="color: var(--bs-gray);"><i class="fas fa-times"></i></button>
                         </li>
                 </transition-group>
             </div>
