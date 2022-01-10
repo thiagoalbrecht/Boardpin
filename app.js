@@ -63,9 +63,9 @@ var todoListApp = new Vue({
 		},
 
 		refreshItems: function (instant) {
-			let target = "json.php";
-			if (instant) target = "json.php?instant=1"; // URL for requesting the list content without waiting for change (force update w/o long polling)
-			axios.get(rootURL + target + '&boardid=' + boardlink)
+			let target = "json.php?";
+			if (instant) target = "json.php?instant=1&"; // URL for requesting the list content without waiting for change (force update w/o long polling)
+			axios.get(rootURL + target + 'boardid=' + boardlink)
 				.then(response => {
 					this.todoItems = [...response.data]
 					GetFreeItemIndex(this.todoItems);
