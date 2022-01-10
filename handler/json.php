@@ -6,7 +6,7 @@ header("Access-Control-Allow-Origin: *");
 require '../secret/credentials.php';
 
 
-$board_id = "5d9b77bd";
+$board_id = $_GET['boardid'];
 
 function getJSONfromDB($board_id){
    // Create connection
