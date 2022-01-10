@@ -53,6 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $id_to_update = $requested_array[0]->Id;
       $board_content_array[$id_to_update] = $requested_array;
       $content = trim(json_encode($board_content_array), "[]");
+
+    echo "board content: ".$board_content_array." Requested: ".$requested_array." Id to update: ".$id_to_update." board content at index: ".$board_content_array[$id_to_update]." content:".$content;
+      break;
   }
 
 
