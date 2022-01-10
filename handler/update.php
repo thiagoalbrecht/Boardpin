@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     
-    $board_id = $_GET['boardid'];
+    $board_id = $_POST['boardid'];
     $select_query = "SELECT trimmed_json FROM boards WHERE board='$board_id'";
 
     $result = $conn->query($select_query);
