@@ -64,6 +64,10 @@ var boardpinApp = new Vue({
 			postUpdate("remove", jsoncontent);
 		},
 
+		logCheckbox: function (){
+			console.log("Changed!");
+		},
+
 		refreshItems: function (instant) {
 			let target = "json.php?";
 			if (instant) target = "json.php?instant=1&"; // URL for requesting the list content without waiting for change (force update w/o long polling)
