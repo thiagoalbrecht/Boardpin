@@ -1,0 +1,2 @@
+ReWriteEngine on
+RewriteRule ^(.*)$ index.php?id=$1 [NC, QSA]
