@@ -1,0 +1,12 @@
+.list-item-animation {
+	transition: all 0.25s;
+}
+
+.list-animation-leave-to {
+	opacity: 0;
+	transform: translateX(-100px);
+}
+.list-animation-enter {
+	opacity: 0;
+	transform: translateY(-30px);
+}
