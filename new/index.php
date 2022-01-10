@@ -25,7 +25,7 @@ function createNewBoard($board_id)
         die("Connection failed: " . $conn->connect_error);
     }
 
-        $insert_query = "INSERT INTO `boards`(`board`, `trimmed_json`) VALUES ('$board_id','')'";
+        $insert_query = "INSERT INTO `boards`(`board`, `trimmed_json`) VALUES ('$board_id','')";
         $result = $conn->query($insert_query);
         echo "Board Created.".$insert_query;
     
