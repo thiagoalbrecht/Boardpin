@@ -21,7 +21,7 @@ $boardlink = "boardpin.xyz/b/".$output_array[1];
 <body>
     <div id="app-boardpin">
         <nav class="navbar navbar-dark navbar-expand-md bg-dark navigation-clean-button">
-            <div class="container"><a class="navbar-brand" href="#" style="color: rgb(255,255,255);"><i class="fas fa-map-pin me-2"></i>Boardpin</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand" href="/" style="color: rgb(255,255,255);"><i class="fas fa-map-pin me-2"></i>Boardpin</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav me-auto"></ul>
                     <div class="input-group" style="max-width: 370px;"><span class="input-group-text">Board link</span><input class="form-control" type="text" value="<?php echo $boardlink;?>" disabled><button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#qrcode"><i class="fas fa-qrcode"></i></button><button class="btn btn-primary" type="button" v-on:click="copytoClipboard('<?php echo $boardlink;?>')"><i class="far fa-copy"></i></button></div>
