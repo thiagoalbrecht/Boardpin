@@ -39,13 +39,15 @@ var boardpinApp = new Vue({
 			let jsoncontent = JSON.stringify(newItem);
 			switch (this.newNoteText) {
 				case "/help":
-					alert("!Something = Create a to-do item 'Something'\n/clear = Delete all notes from board");
+					alert("!Something = Create a to-do item 'Something'\n/clear = Delete all notes from board\n/destroy = Delete board from existence");
 					break;
 				case "/clear":
 					this.noteItems = [];
 					postUpdate("add", jsoncontent);
 					break;
-
+				case "/destroy":
+					this.noteItems = [];
+					break;
 				default:
 					this.noteItems.unshift(newItem);
 					postUpdate("add", jsoncontent);
