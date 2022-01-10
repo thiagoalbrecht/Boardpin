@@ -65,7 +65,7 @@ var boardpinApp = new Vue({
 		},
 
 		logCheckbox: function (){
-			console.log(jsoncontent);
+			console.log(this.jsoncontent);
 		},
 
 		refreshItems: function (instant) {
