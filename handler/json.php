@@ -5,7 +5,6 @@ header("Access-Control-Allow-Origin: *");
 
 require '../secret/credentials.php';
 
-
 $board_id = $_GET['boardid'];
 
 function getJSONfromDB($board_id)
@@ -36,9 +35,6 @@ function getJSONfromDB($board_id)
   $conn->close();
   return $board_content;
 }
-
-
-
 
 $starting_content = $current_content = getJSONfromDB($board_id);
 
