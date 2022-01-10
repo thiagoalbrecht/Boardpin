@@ -2,7 +2,7 @@
 require '../secret/credentials.php';
 
 $board_id = generateBoardID();
-createNewBoard("ycYWuL");
+createNewBoard($board_id);
 
 function generateBoardID($length = 6)
 {
