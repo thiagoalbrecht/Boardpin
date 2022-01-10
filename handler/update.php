@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (strpos($content, 'Text":"/demo"') !== false) $content = '{"Id":7,"Text":"Vestibulum sed aliquet lorem","IsDone":false},{"Id":6,"Text":"Praesent rutrum lorem sed erat convallis","IsDone":false},{"Id":5,"Text":"Curabitur consectetur feugiat dolor sed dictum","IsDone":false},{"Id":4,"Text":"Aliquam ornare lectus quis lorem volutpat","IsDone":false},{"Id":3,"Text":"Nunc aliquet quam velit","IsDone":false},{"Id":2,"Text":"consectetur adipiscing elit","IsDone":false},{"Id":1,"Text":"Lorem ipsum dolor sit amet","IsDone":false}'; // Create a demo list
   if (strpos($content, 'Text":"/destroy"') !== false) {
     $destroy_query = "DELETE FROM boards WHERE board='$board_id'";
-    $result = $conn->query($select_query);
+    $result = $conn->query($destroy_query);
   };
 
   $content = checkDuplicates($content);
