@@ -46,7 +46,7 @@ $boardlink = "boardpin.xyz/b/".$output_array[1];
                     <div class="modal-header">
                         <h4 class="modal-title">Board link</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body text-center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data=<?php echo $boardlink;?>" style="width: 100%;max-width: 250px;" />
+                    <div class="modal-body text-center"><img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&amp;data=https://<?php echo $boardlink;?>" style="width: 100%;max-width: 250px;" />
                         <h4 class="mt-2"><?php echo $boardlink;?></h4>
                     </div>
                 </div>
@@ -55,6 +55,9 @@ $boardlink = "boardpin.xyz/b/".$output_array[1];
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<script>
+    let boardlink = <?php echo $output_array[1]; ?>;
+</script>
 <script src="/app.js"></script>
 
 </html>
