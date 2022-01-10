@@ -29,13 +29,13 @@ function createNewBoard($board_id)
 
     $result = $conn->query($select_query);
 
-    if ($result->num_rows > 0) {
+    if ($result->num_rows > 0) { // In the improbable case that the generated id already exists, generate a new one and try again
         $board_id = generateBoardID();
         createNewBoard($board_id);
-        echo "Board already exists...";
     } else {
         $insert_query = "INSERT INTO `boards`(`board`, `trimmed_json`) VALUES ('$board_id','')";
         $result = $conn->query($insert_query);
-        echo "Board Created.";
+        header('Location: '.URL.'/b/'.$board_id);
+        exit;
     }
 }
