@@ -66,9 +66,13 @@ var boardpinApp = new Vue({
 			if (instant) target = "json.php?instant=1&"; // URL for requesting the list content without waiting for change (force update w/o long polling)
 			axios.get(rootURL + target + 'boardid=' + boardlink)
 				.then(response => {
-					this.noteItems = [...response.data]
-					GetFreeItemIndex(this.noteItems);
-					this.refreshItems();
+					if (response.data === "404") {
+						alert("This board could not be found. Please check the URL.");
+					} else {
+						this.noteItems = [...response.data]
+						GetFreeItemIndex(this.noteItems);
+						this.refreshItems();
+					}
 				})
 		},
 		copytoClipboard: function (url) {
