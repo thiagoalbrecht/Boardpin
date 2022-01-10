@@ -56,7 +56,7 @@ $boardlink = "boardpin.xyz/b/".$output_array[1];
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 <script>
-    let boardlink = <?php echo $output_array[1]; ?>;
+    let boardlink = "<?php echo $output_array[1]; ?>";
 </script>
 <script src="/app.js"></script>
 
