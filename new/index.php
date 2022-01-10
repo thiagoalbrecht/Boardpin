@@ -32,8 +32,10 @@ function createNewBoard($board_id)
     if ($result->num_rows > 0) {
         $board_id = generateBoardID();
         createNewBoard($board_id);
+        echo "Board already exists. Creating other... ";
     } else {
         $insert_query = "INSERT INTO `boards`(`board`, `trimmed_json`) VALUES ('$board_id','')'";
         $result = $conn->query($insert_query);
+        echo "Board Created.";
     }
 }
