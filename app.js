@@ -1,5 +1,5 @@
 var itemIndex = 0;
-var rootURL = "https://boardpin.salviano.xyz/handler/"; // Handler URL
+var rootURL = "https://boardpin.xyz/handler/"; // Handler URL
 var allowUpdate = true;
 
 function GetFreeItemIndex(objlist) {
