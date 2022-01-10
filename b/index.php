@@ -9,12 +9,11 @@ $boardlink = "boardpin.xyz/b/".$output_array[1];
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Boardpin</title>
-    <base href="../">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.1/dist/darkly/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
-    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link href="/style.css" rel="stylesheet" />
     <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
@@ -56,6 +55,6 @@ $boardlink = "boardpin.xyz/b/".$output_array[1];
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="app.js"></script>
+<script src="/app.js"></script>
 
 </html>
