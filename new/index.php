@@ -4,7 +4,7 @@ require '../secret/credentials.php';
 $board_id = generateBoardID();
 createNewBoard($board_id);
 
-function generateBoardID($length = 6)
+function generateBoardID($length = 7)
 {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
