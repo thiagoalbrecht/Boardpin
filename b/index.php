@@ -35,7 +35,7 @@ $boardlink = "boardpin.xyz/b/" . $output_array[1];
             <div id="main-content" class="mt-4">
                 <transition-group tag="ul" name="list-animation" class="list-group">
                     <li v-for="note in noteItems" v-bind:key="note.Id" class="list-group-item d-flex justify-content-between align-items-center list-item-animation">
-                        <div><input class="form-check-input me-2" type="checkbox" v-model="note.IsDone" v-bind:class="isTodo : note.boolIsTodo" v-on:change="updateNote(note,'update')"><label v-bind:class="{ completed: note.IsDone }" class="form-check-label">{{ note.Text }}</label></div><button class="btn btn-link btn-sm" v-on:click="updateNote(note,'remove')" type="button" style="color: var(--bs-gray);"><i class="fas fa-times"></i></button>
+                        <div><input class="form-check-input me-2" type="checkbox" v-model="note.IsDone" v-bind:class="{ isTodo : note.boolIsTodo }" v-on:change="updateNote(note,'update')"><label v-bind:class="{ completed: note.IsDone }" class="form-check-label">{{ note.Text }}</label></div><button class="btn btn-link btn-sm" v-on:click="updateNote(note,'remove')" type="button" style="color: var(--bs-gray);"><i class="fas fa-times"></i></button>
                     </li>
                 </transition-group>
             </div>
