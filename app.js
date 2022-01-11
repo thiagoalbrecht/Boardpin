@@ -10,7 +10,7 @@ function GetFreeItemIndex(objlist) {
 }
 
 function postUpdate(task, jsoncontent) {
-	axios.post(rootURL + "update.php", 'task=' + task + '&json=' + jsoncontent + '&boardid=' + boardlink)
+	axios.post(encodeURIComponent(rootURL + "update.php", 'task=' + task + '&json=' + jsoncontent + '&boardid=' + boardlink))
 		.then(() => {
 			allowUpdate = true;
 		})
