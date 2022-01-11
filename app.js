@@ -34,8 +34,9 @@ var boardpinApp = new Vue({
 			allowUpdate = false;
 			if (this.newNoteText.trim() === "")
 				return;
-
-			let newItem = { Id: GetFreeItemIndex(this.noteItems), Text: this.newNoteText, IsDone: false };
+			let boolIsTodo = false;
+			if (this.newNoteText.charAt(0) === "!") boolIsTodo = true;
+			let newItem = { Id: GetFreeItemIndex(this.noteItems), Text: this.newNoteText, IsTodo: boolIsTodo, IsDone: false };
 			let jsoncontent = JSON.stringify(newItem);
 			switch (this.newNoteText) {
 				case "/help":
