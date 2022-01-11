@@ -35,7 +35,7 @@ var boardpinApp = new Vue({
 			if (this.newNoteText.trim() === "")
 				return;
 			let boolIsTodo = false;
-			if (this.newNoteText.charAt(0) === "!") boolIsTodo = true;
+			if (this.newNoteText.charAt(0) === "!") { boolIsTodo = true; this.newNoteText = this.newNoteText.substring(1) } // Remove initial ! from string for to-do items
 			let newItem = { Id: GetFreeItemIndex(this.noteItems), Text: this.newNoteText, IsTodo: boolIsTodo, IsDone: false };
 			let jsoncontent = JSON.stringify(newItem);
 			switch (this.newNoteText) {
