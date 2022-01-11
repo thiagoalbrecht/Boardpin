@@ -54,11 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $key_of_found_id = array_search($id_to_update, array_column($board_content_array, 'Id'));
       $board_content_array[$key_of_found_id] = $requested_array[0];
       $content = trim(json_encode($board_content_array), "[]");
-
-    echo "board content: ".json_encode($board_content_array)." Requested: ".json_encode($requested_array)." Id to update: ".$id_to_update." board content at index: ".json_encode($board_content_array[$id_to_update])." content:".$content;
       break;
   }
-  echo $_POST['task'];
 
   if (strpos($content, 'Text":"/clear"') !== false) $content = "";
   if (strpos($content, 'Text":"/demo"') !== false) $content = '{"Id":7,"Text":"Vestibulum sed aliquet lorem","IsDone":false},{"Id":6,"Text":"Praesent rutrum lorem sed erat convallis","IsDone":false},{"Id":5,"Text":"Curabitur consectetur feugiat dolor sed dictum","IsDone":false},{"Id":4,"Text":"Aliquam ornare lectus quis lorem volutpat","IsDone":false},{"Id":3,"Text":"Nunc aliquet quam velit","IsDone":false},{"Id":2,"Text":"consectetur adipiscing elit","IsDone":false},{"Id":1,"Text":"Lorem ipsum dolor sit amet","IsDone":false}'; // Create a demo list
