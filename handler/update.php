@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $board_content_array[$key_of_found_id] = $requested_array;
       $content = trim(json_encode($board_content_array), "[]");
 
-    print_r( "board content: ".$board_content_array." Requested: ".$requested_array." Id to update: ".$id_to_update." board content at index: ".$board_content_array[$id_to_update]." content:".$content);
+    echo "board content: ".json_encode($board_content_array)." Requested: ".json_encode($requested_array)." Id to update: ".$id_to_update." board content at index: ".json_encode($board_content_array[$id_to_update])." content:".$content;
       break;
   }
   echo $_POST['task'];
