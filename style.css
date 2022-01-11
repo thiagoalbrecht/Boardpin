@@ -13,6 +13,6 @@
 .form-check-input{
 	display:none;
 }
-.isTodo{
-	display:block!important;
+.displayTodo{
+	display:inline-block!important;
 }
