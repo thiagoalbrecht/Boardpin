@@ -71,7 +71,7 @@ var boardpinApp = new Vue({
 			axios.get(rootURL + target + 'boardid=' + boardlink)
 				.then(response => {
 					if (response.data === 404) {
-						alert("This board could not be found. Please check the URL.");
+						alert("This board could not be found. It might have been deleted. Please check the URL.");
 					} else {
 						this.noteItems = [...response.data]
 						GetFreeItemIndex(this.noteItems);
